@@ -5,12 +5,25 @@ public class Manager_Tiles : MonoBehaviour {
 
     public int numberOfTilesLeft;
 	public int branchChance;
-	// Use this for initialization
+	
+	private int tilesInStack = 0;
+	private int doIBranch = 0;
 	void Start () {
 
 	}
-	public int tilesLeft(){
-		return numberOfTilesLeft;
+
+	public void checkSpawn(Spawn_FloorTile tile)
+	{
+		do{
+        if (numberOfTilesLeft >= 1)
+        {
+			tilesInStack++;
+            bool success = tile.CreateTile();
+			tilesInStack--;
+			if (!success){ }
+		}
+		doIBranch = Random.Range(1, 100);
+		}while (doIBranch <= branchChance);
 	}
 	public void spawnRoom(GameObject roomBase, Spawn_VacancyCheck whichSpawner)
 	{
@@ -19,13 +32,7 @@ public class Manager_Tiles : MonoBehaviour {
 		newRoom.transform.SetParent (transform); 
 		numberOfTilesLeft--;
 	}
-	public bool spawnChance(int doIBranch)
-	{
-		if (doIBranch <= branchChance){
-			return true;
-		}
-		else {return false;}
-	}
+
 	// Update is called once per frame
 	void Update () {
 	
