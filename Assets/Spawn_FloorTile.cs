@@ -34,8 +34,8 @@ public class Spawn_FloorTile : MonoBehaviour {
 	int attempts = 0;
 	int whichSpawner = Random.Range(1, 4);
 	while(attempts <= 4)
-	//for (int i = 0; i < 5; i++)
 		{
+		//Debug.Log(vacanyChecks[whichSpawner]);
         if (vacanyChecks[whichSpawner].check() == true)
             {
 				manager_Tiles.spawnRoom(roomBase, vacanyChecks[whichSpawner]);

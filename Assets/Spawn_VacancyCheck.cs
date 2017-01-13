@@ -9,28 +9,13 @@ public class Spawn_VacancyCheck : MonoBehaviour {
 	void Awake ()
     {
         isAvailable = true;
-        //check();
     }
 
 	public bool check()
 	{
 		if (Physics.CheckSphere(transform.position,1.5f))
-		{
-					//isAvailable = false;
-					return false;
-
-		}
-		else{
-			return true;
-		}
+		{return false;}
+		else{return true;}
 			
 	}
-    /*
-    void OnTriggerStay(Collider ground) // C#, type first, name in second
-    {
-        if (ground.gameObject.tag == "Ground")
-        {
-            isAvailable = false;
-        }
-    }*/
 }
