@@ -12,10 +12,6 @@ public class Spawn_FloorTile : MonoBehaviour {
 
     private Manager_Tiles manager_Tiles;
     private Spawn_VacancyCheck[] vacanyChecks = new Spawn_VacancyCheck[5]; // 5 is used to house the 4 cardinal directions and an empty starting point
-    
-    
-    
-    
 
     void Start ()
     {
